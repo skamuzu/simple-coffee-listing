@@ -45,22 +45,22 @@ function App() {
   }, []);
 
   return (
-    <main className="w-full min-h-screen font-dm-sans flex flex-col items-center text-5xl font-bold bg-[#121315]">
-      <div className=" bg-[url('/bg-cafe-lg.jpg')] bg-no-repeat w-full bg-cover h-100 flex justify-center pt-40"></div>
-      <section className="relative -top-40 bg-[#1c1d1f] w-5/6 flex flex-col items-center p-16 h-fit rounded-xl mb-40">
-        <div className="flex flex-col justify-center items-center bg-[url('/vector.svg')] bg-no-repeat bg-size-[300px] h-48 bg-right p-8">
-          <h1 className="text-white mb-3">Our Collection</h1>
-          <p className="text-xl text-[#4D5562] text-center w-2xl">
+    <main className="w-full min-h-screen font-dm-sans flex flex-col items-center text-5xl font-bold bg-[#121315] ">
+      <div className="bg-[url('/bg-cafe-sm.jpg')] md:bg-[url('/bg-cafe-lg.jpg')] bg-no-repeat w-full bg-cover h-100 flex justify-center pt-40  "></div>
+      <section className="relative md:-top-40 -top-80 bg-[#1c1d1f] md:w-5/6 w-16/17 flex flex-col items-center p-2 h-fit rounded-xl mb-10 md:mb-40 overflow-x-hidden">
+        <div className="flex flex-col justify-center items-center bg-[url('/vector.svg')] bg-no-repeat  md:bg-size-[300px] h-48 bg-right p-1 pt-40">
+          <h1 className="text-white mb-3 text-4xl">Our Collection</h1>
+          <p className="text-lg md:text-xl text-[#4D5562] text-center md:w-2xl w-full">
             Introducing our Coffee Collection, a selection of unique coffees
             from different roast types and origins, expertly roasted in small
             batches and shipped fresh weekly.
           </p>
         </div>
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 justify-center mt-30">
           <button className={`text-white p-2 text-xl ${selected === "all" ? "bg-[#6F757C] rounded-md" : ""} `}  onClick={() => handleButtonClick("all")}>All Products</button>
           <button className={`text-white p-2 text-xl ${selected === "available" ? "bg-[#6F757C] rounded-md" : ""} `} onClick={() => handleButtonClick("available")}>Available Now</button>
         </div>
-        <div className="grid grid-cols-3 gap-20 my-20 ">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-20 mt-20 pb-10">
           {coffees.map((coffee) => (
             <div key={coffee.id} className="flex flex-col gap-1">
               <div>
@@ -68,7 +68,7 @@ function App() {
                   <img
                     src={coffee.image}
                     alt={coffee.name}
-                    className="w-90 rounded-lg mb-2"
+                    className=" md:w-90 rounded-lg mb-2"
                   />
                   {coffee.popular && (
                     <div className="absolute top-4 left-4 text-sm bg-[#F6C768] p-1.5 rounded-full w-20 flex items-center justify-center">
